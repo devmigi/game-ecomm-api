@@ -57,4 +57,24 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+
+
+    public function wishlists()
+    {
+        return $this->hasMany('App\Models\Wishlist');
+    }
+
+
+    public function reviews()
+    {
+        return $this->hasMany('App\Models\Review');
+    }
+
+
+    public function addresses()
+    {
+        return $this->hasMany('App\Models\Address');
+    }
+
 }

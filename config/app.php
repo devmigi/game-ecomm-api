@@ -177,6 +177,8 @@ return [
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
 
+        App\Providers\RepositoryServiceProvider::class,
+
     ],
 
     /*
@@ -230,5 +232,27 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
+
+
+
+    /*
+     * Hiding Environment Variables From Debug Pages
+     */
+    'debug_blacklist' => [
+        '_ENV' => [
+            'APP_KEY',
+            'DB_PASSWORD',
+        ],
+
+        '_SERVER' => [
+            'APP_KEY',
+            'DB_PASSWORD',
+        ],
+
+        '_POST' => [
+            'password',
+        ],
+    ],
+
 
 ];
